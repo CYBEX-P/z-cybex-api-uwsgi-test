@@ -1,0 +1,13 @@
+[Unit]
+Description=Cybex API
+After=network.target
+
+[Service]
+User=cybex-user
+Group=www-data
+WorkingDirectory=/home/cybex-user/app/
+Environment="PATH=/home/cybex-user/app/venv/bin"
+ExecStart=/home/cybec-user/app/venv/bin/uwsgi --ini /home/cybex-user/app/uwsgi.ini
+
+[Install]
+WantedBy=multi-user.target
